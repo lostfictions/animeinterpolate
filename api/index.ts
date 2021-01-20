@@ -35,6 +35,10 @@ function rint(min: number, max: number): number {
 const getSeed = () => rint(0, 50000).toString().padStart(4, "0");
 
 export default async (req: NowRequest, res: NowResponse) => {
+  res.writeHead(200, {
+    "Content-Type": "image/gif",
+  });
+
   const { seed, delay } = req.query;
 
   const padded = seed ? seed.toString().padStart(4, "0") : getSeed();
