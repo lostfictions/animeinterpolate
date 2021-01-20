@@ -16,10 +16,8 @@
   "author": "s <https://github.com/lostfictions>",
   "license": "AGPL-3.0",
   "dependencies": {
-    "axios": "^0.21.1",
     "canvas": "^2.6.1",
-    "gif-encoder-2": "^1.0.5",
-    "source-map-support": "^0.5.19"
+    "gif-encoder-2": "^1.0.5"
   },
   "devDependencies": {
     "@types/node": "^14.14.16",
@@ -27,7 +25,6 @@
     "eslint-config-lostfictions": "^1.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
-    "ts-node": "^9.1.1",
     "ts-node-dev": "^1.1.1",
     "typescript": "^4.1.3"
   }
