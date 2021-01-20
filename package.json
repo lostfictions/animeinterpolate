@@ -5,6 +5,7 @@
   "main": "api/index.ts",
   "scripts": {
     "dev": "tsnd --respawn --transpile-only api/index.ts",
+    "now-build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build",
     "test": "run-s -l test:*",
     "test:ts": "tsc --noEmit",
     "test:eslint": "eslint --color 'src/**/*'",
