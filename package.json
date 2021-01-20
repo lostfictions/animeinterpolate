@@ -2,11 +2,9 @@
   "name": "advent",
   "version": "0.0.1",
   "private": true,
-  "main": "dist/main.js",
+  "main": "api/index.ts",
   "scripts": {
-    "start": "node dist/main.js",
-    "dev": "tsnd --respawn --transpile-only src/main.ts",
-    "build": "rm -rf dist/ && tsc",
+    "dev": "tsnd --respawn --transpile-only api/index.ts",
     "test": "run-s -l test:*",
     "test:ts": "tsc --noEmit",
     "test:eslint": "eslint --color 'src/**/*'",
