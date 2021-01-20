@@ -17,9 +17,11 @@
   "license": "AGPL-3.0",
   "dependencies": {
     "canvas": "^2.6.1",
-    "gif-encoder-2": "^1.0.5"
+    "gif-encoder-2": "^1.0.5",
+    "koa": "^2.13.1"
   },
   "devDependencies": {
+    "@types/koa": "^2.11.6",
     "@types/node": "^14.14.16",
     "eslint": "^7.16.0",
     "eslint-config-lostfictions": "^1.0.0",
