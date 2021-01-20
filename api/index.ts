@@ -1,4 +1,3 @@
-import Koa from "koa";
 import { createCanvas, Image } from "canvas";
 import GIFEncoder from "gif-encoder-2";
 

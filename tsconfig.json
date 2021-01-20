@@ -10,11 +10,11 @@
     "strict": true,
     "esModuleInterop": true,
     "sourceMap": true,
-    "rootDir": "./src",
+    "rootDir": "./api",
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
   "include": [
-    "src"
+    "api"
   ]
 }
