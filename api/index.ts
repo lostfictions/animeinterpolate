@@ -1,6 +1,8 @@
 import { createCanvas, Image } from "canvas";
 import GIFEncoder from "gif-encoder-2";
 
+import type { NowRequest, NowResponse } from "@vercel/node";
+
 const geturl = (psi: string, seed: string) =>
   `https://thisanimedoesnotexist.ai/results/psi-${psi}/seed${seed}.png`;
 
@@ -32,15 +34,8 @@ function rint(min: number, max: number): number {
 
 const getSeed = () => rint(0, 50000).toString().padStart(4, "0");
 
-const app = new Koa();
-
-app.use(async ({ path, res, query }) => {
-  if (path !== "/") {
-    res.statusCode = 404;
-    return;
-  }
-
-  const { seed, delay } = query;
+export default async (req: NowRequest, res: NowResponse) => {
+  const { seed, delay } = req.query;
 
   const padded = seed ? seed.toString().padStart(4, "0") : getSeed();
 
@@ -48,7 +43,7 @@ app.use(async ({ path, res, query }) => {
 
   encoder.createReadStream().pipe(res);
   encoder.start();
-  encoder.setDelay(parseInt(delay) || 50);
+  encoder.setDelay(parseInt(delay as string) || 50);
 
   const canvas = createCanvas(512, 512);
   const ctx = canvas.getContext("2d");
@@ -59,6 +54,4 @@ app.use(async ({ path, res, query }) => {
   }
 
   encoder.finish();
-});
-
-app.listen(3000);
+};
